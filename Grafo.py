@@ -1,4 +1,5 @@
 import csv
+from pprint import pprint
 
 def retornaGrafo():
     grafo = {}
@@ -10,6 +11,20 @@ def retornaGrafo():
                 grafo[linha[0]].append(linha[1])
             else:
                 grafo[linha[0]] = [linha[1]]
+
+    return grafo
+
+
+def retornaGrafoCusto():
+    grafo = {}
+
+    with open("csv/arestas.csv", "r") as csv_file:
+        tabela = csv.reader(csv_file)
+        for linha in tabela:
+            if linha[0] in grafo:
+                grafo[linha[0]].append((linha[1], linha[2]))
+            else:
+                grafo[linha[0]] = [(linha[1], linha[2])]
 
     return grafo
 
@@ -35,3 +50,6 @@ def heuristicaDistancia():
                 matDistancia[i][j] = None
 
     return ordenacaoCidades, matDistancia
+
+
+pprint(retornaGrafoCusto())
