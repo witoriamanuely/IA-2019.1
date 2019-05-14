@@ -1,13 +1,13 @@
 class DFS:
-    def DFSUtil(self, v, visited, graph):
-        visited[v] = True
+    def DFSUtil(self, v, visitado, grafo):
+        visitado[v] = True
         print(v)
         #Percorre o grafo e verifica se o lugar não foi visitado, e retorna pro mesmo método até ser visitados todos
-        for i in graph[v]:
-            if visited[i] == False:
-                self.DFSUtil(i, visited)
+        for i in grafo[v]:
+            if visitado[i] == False:
+                self.DFSUtil(i, visitado)
 
 
-    def DFS(self, v, graph):
-        visited = [False] * (len(graph))
-        self.DFSUtil(v, visited, graph)
+    def DFS(self, v, grafo):
+        visitado = [False] * (len(grafo))
+        self.DFSUtil(v, visitado, grafo)
