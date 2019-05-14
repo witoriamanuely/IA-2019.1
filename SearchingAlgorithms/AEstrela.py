@@ -1,3 +1,4 @@
+from prioridade
 
 class AStarSearch:
      def heuristica(a, b):
