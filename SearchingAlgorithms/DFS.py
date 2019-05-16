@@ -23,9 +23,9 @@ class DFS:
         for indice in self.grafo.nodes:
             visitados[indice] = False
    
-        pilha = []; 
+        pilha = []
     
-        pilha.append(vertice); 
+        pilha.append(vertice)
     
         while not len(pilha) == 0:
             vertice = pilha.pop(); 
@@ -37,8 +37,8 @@ class DFS:
 
             if not visitados[vertice]:
                 self.caminho.append(vertice)
-                visitados[vertice] = True; 
+                visitados[vertice] = True
 
             for vizinhos in self.grafo.neighbors(vertice):
-                if not visitados[vizinhos]:
-                    pilha.append(vizinhos); 
+                if not visitados[vizinhos]
+                    pilha.append(vizinhos)
