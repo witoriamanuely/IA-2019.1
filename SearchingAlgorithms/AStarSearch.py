@@ -1,7 +1,7 @@
 import heapq
 import numpy as np
 
-class prioridadeFila:
+class PrioridadeFila:
     def __init__(self):
         self.elements = []
 
@@ -42,15 +42,15 @@ class AStarSearch:
 
 
     def aStarSearch(self, origem, destino):
-        filaPrioridade = prioridadeFila()
-        filaPrioridade.put(origem, 0)
+        prioridadeFila = PrioridadeFila()
+        prioridadeFila.put(origem, 0)
         vindoDe = {}
         custoAteAgora = {}
         vindoDe[origem] = None
         custoAteAgora[origem] = 0
 
-        while not filaPrioridade.empty():
-            atual = filaPrioridade.get()
+        while not prioridadeFila.empty():
+            atual = prioridadeFila.get()
 
             if atual == destino:
                 break
@@ -60,7 +60,7 @@ class AStarSearch:
                 if vizinho not in custoAteAgora or novo_custo < custoAteAgora[vizinho]:
                     custoAteAgora[vizinho] = novo_custo
                     prioridade = novo_custo + self.menorValorHeuristica(vizinho, destino)
-                    filaPrioridade.put(vizinho, prioridade)
+                    prioridadeFila.put(vizinho, prioridade)
                     vindoDe[vizinho] = atual
 
         self.imprimirCaminho(self.backtracking(vindoDe, destino))
