@@ -28,7 +28,7 @@ class DFS:
         pilha.append(vertice)
     
         while not len(pilha) == 0:
-            vertice = pilha.pop(); 
+            vertice = pilha.pop()
 
             if vertice == destino:
                 self.caminho.append(vertice)
@@ -40,5 +40,5 @@ class DFS:
                 visitados[vertice] = True
 
             for vizinhos in self.grafo.neighbors(vertice):
-                if not visitados[vizinhos]
+                if not visitados[vizinhos]:
                     pilha.append(vizinhos)
