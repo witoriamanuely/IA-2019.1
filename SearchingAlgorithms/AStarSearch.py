@@ -1,7 +1,7 @@
 import heapq
 import numpy as np
 
-class prioridadeQueue:
+class prioridadeFila:
     def __init__(self):
         self.elements = []
 
@@ -42,7 +42,7 @@ class AStarSearch:
 
 
     def aStarSearch(self, origem, destino):
-        filaPrioridade = prioridadeQueue()
+        filaPrioridade = prioridadeFila()
         filaPrioridade.put(origem, 0)
         vindoDe = {}
         custoAteAgora = {}
