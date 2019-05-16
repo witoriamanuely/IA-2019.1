@@ -56,7 +56,7 @@ class AStarSearch:
                 break
 
             for vizinho in self.grafo.neighbors(atual):
-                novo_custo = custoAteAgora[atual] + self.grafo[atual][vizinho]['weight']
+                novo_custo = custoAteAgora[atual] + self.grafo[atual][vizinho]["weight"]
                 if vizinho not in custoAteAgora or novo_custo < custoAteAgora[vizinho]:
                     custoAteAgora[vizinho] = novo_custo
                     prioridade = novo_custo + self.menorValorHeuristica(vizinho, destino)
@@ -67,14 +67,8 @@ class AStarSearch:
 
 
     def menorValorHeuristica(self, vertice, objetivo):
-        visitado = None
-
-        if not visitado:
-            visitado = [vertice]
-        else:
-            if vertice not in visitado:
-                visitado.append(vertice)
-
+        visitado = [vertice]
+        
         vizinhos = list(set(self.grafo[vertice]) - set(visitado))
         menor = vizinhos[0]
         menorValor = 0
@@ -88,7 +82,7 @@ class AStarSearch:
             if np.isnan(heuristicaMin):
                 heuristicaMin = self.heuristica[menor][objetivo]
 
-            if self.grafo[vertice][i]['weight'] + valoresHeuristica < self.grafo[vertice][menor]['weight'] + heuristicaMin:
-                menorValor = self.grafo[vertice][i]['weight'] + valoresHeuristica
+            if self.grafo[vertice][i]["weight"] + valoresHeuristica < self.grafo[vertice][menor]["weight"] + heuristicaMin:
+                menorValor = self.grafo[vertice][i]["weight"] + valoresHeuristica
 
         return menorValor
