@@ -1,7 +1,6 @@
 from collections import defaultdict
 
 class DFS:
-<<<<<<< HEAD
     def __init__(self, grafo):
         self.grafo = grafo
         self.encontrouCaminho = False
@@ -43,17 +42,3 @@ class DFS:
             for vizinhos in self.grafo.neighbors(vertice):
                 if not visitados[vizinhos]:
                     pilha.append(vizinhos); 
-=======
-    def DFSUtil(self, v, visitado, grafo):
-        visitado[v] = True
-        print(v)
-        #Percorre o grafo e verifica se o lugar não foi visitado, e retorna pro mesmo método até ser visitados todos
-        for i in grafo[v]:
-            if visitado[i] == False:
-                self.DFSUtil(i, visitado)
-
-
-    def DFS(self, v, grafo):
-        visitado = [False] * (len(grafo))
-        self.DFSUtil(v, visitado, grafo)
->>>>>>> 50c0a62435ceb48b69f60eb1c060feb38b1d1e55

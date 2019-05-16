@@ -1,7 +1,7 @@
 from SearchingAlgorithms.DFS import DFS
 from SearchingAlgorithms.BFS import BFS
 from SearchingAlgorithms.AStarSearch import AStarSearch
-import Grafo
+import SearchingAlgorithms.Grafo as Grafo
 
 def main():
     while True:
